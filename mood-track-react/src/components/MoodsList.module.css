@@ -1,0 +1,8 @@
+.moodsContainer {
+  width: 800px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
+  gap: 20px;
+  margin: auto;
+}

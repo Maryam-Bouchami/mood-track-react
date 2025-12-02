@@ -1,0 +1,12 @@
+[
+  { "name": "Happy", "color": "#FFD93D", "score": 5 },
+  { "name": "Excited", "color": "#FF8E3C", "score": 4 },
+  { "name": "Calm", "color": "#6BCB77", "score": 3 },
+  { "name": "Neutral", "color": "#C7C9C7", "score": 2 },
+  { "name": "Sad", "color": "#4D96FF", "score": 1 },
+  { "name": "Angry", "color": "#FF6B6B", "score": 1 },
+  { "name": "Stressed", "color": "#9D4EDD", "score": 1 },
+  { "name": "Tired", "color": "#6E6E6E", "score": 1 },
+  { "name": "Motivated", "color": "#00BFA6", "score": 4 },
+  { "name": "Grateful", "color": "#F9A826", "score": 5 }
+]

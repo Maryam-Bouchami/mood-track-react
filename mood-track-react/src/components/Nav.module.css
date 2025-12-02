@@ -1,0 +1,5 @@
+.navContainer {
+  height: 100px;
+  width: 800px;
+  display: flex;
+}
