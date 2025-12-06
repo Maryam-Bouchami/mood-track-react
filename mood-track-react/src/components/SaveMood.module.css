@@ -1,0 +1,23 @@
+.saveButton {
+  height: 50px;
+  width: 200px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #187505, #60e05c);
+  color: aliceblue;
+  font-size: 1.1em;
+}
+
+.saveButton:hover {
+  background: linear-gradient(to right, #60e05c, #187505);
+}
+
+.saveMoodContainer {
+  width: 100%;
+  height: 530px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}

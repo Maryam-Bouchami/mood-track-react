@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MoodsList from "./components/MoodsList";
 import MyTheme from "./MyTheme";
 import Nav from "./components/Nav";
 import Calendar from "./components/Calendar";
+import SaveMood from "./components/SaveMood";
+import "./App.css";
 
 function App() {
   // Mood actuel
@@ -19,41 +21,29 @@ function App() {
     return savedDate || new Date().toISOString().slice(0, 10);
   });
 
-  // Historique des moods (avec date)
+  // Historique
   const [history, setHistory] = useState(() => {
     const saved = localStorage.getItem("moodHistory");
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Ajouter un mood à l'historique à chaque changement de mood
-  useEffect(() => {
-    // Sauvegarder le mood actuel
+  // 💾 Fonction SAVE déclenchée par le bouton Save
+  const saveMood = () => {
+    const newEntry = { ...moodState, date: selectedDate };
+
+    const updated = [...history, newEntry];
+
+    // 🔥 Sauvegarde dans localStorage SEULEMENT ici
     localStorage.setItem("moodState", JSON.stringify(moodState));
+    localStorage.setItem("selectedDate", selectedDate);
+    localStorage.setItem("moodHistory", JSON.stringify(updated));
 
-    // Ajouter dans l'historique uniquement si mood ET date ont changé
-    setHistory((prev) => {
-      const lastEntry = prev[prev.length - 1];
-      if (
-        !lastEntry ||
-        lastEntry.name !== moodState.name ||
-        lastEntry.date !== selectedDate
-      ) {
-        // On vérifie que **les deux** sont différents pour ajouter
-        if (
-          !lastEntry ||
-          (lastEntry.name !== moodState.name && lastEntry.date !== selectedDate)
-        ) {
-          const newEntry = { ...moodState, date: selectedDate };
-          const updated = [...prev, newEntry];
-          localStorage.setItem("moodHistory", JSON.stringify(updated));
-          return updated;
-        }
-      }
-      return prev;
-    });
-  }, [moodState, selectedDate]);
+    setHistory(updated);
 
-  // Fonction pour vider l'historique et reset mood/date
+    console.log("Mood Saved :", newEntry);
+  };
+
+  // Reset complet
   const clearStorage = () => {
     localStorage.clear();
     const defaultMood = { name: "Neutral", color: "#C7C9C7", score: 2 };
@@ -67,26 +57,31 @@ function App() {
     <MyTheme.Provider value={moodState.color}>
       <Nav />
 
-      {/* Sélecteur de date */}
-      <Calendar selectedDate={selectedDate} onDateChange={setSelectedDate} />
+      <div className="AppContainer">
+        {/*  Nouveau composant SaveMood */}
+        <SaveMood
+          moodState={moodState}
+          setMoodState={setMoodState}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+          onSave={saveMood}
+        />
+        <div className="history">
+          <h3>History</h3>
+          <ul>
+            {history.map((m, i) => (
+              <li key={i}>
+                {m.date} — {m.name}
+                {/*  — {m.color} — Score {m.score}  */}
+              </li>
+            ))}
+          </ul>
 
-      {/* Liste des moods */}
-      <MoodsList moodState={moodState} setMoodState={setMoodState} />
-
-      <p>
-        Current mood: {moodState.name} (Date: {selectedDate})
-      </p>
-
-      <h3>Historique des moods :</h3>
-      <ul>
-        {history.map((m, i) => (
-          <li key={i}>
-            {m.date} — {m.name} — {m.color} — Score {m.score}
-          </li>
-        ))}
-      </ul>
-
-      <button onClick={clearStorage}>Vider le stockage</button>
+          <button className="emptyButton" onClick={clearStorage}>
+            Clear History
+          </button>
+        </div>
+      </div>
     </MyTheme.Provider>
   );
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import styles from "./Calendar.module.css";
 export default function Calendar({ selectedDate, onDateChange }) {
   const [date, setDate] = useState(() => {
     // Charger la date du localStorage si elle existe
@@ -15,10 +15,10 @@ export default function Calendar({ selectedDate, onDateChange }) {
   }, [date, onDateChange]);
 
   return (
-    <div>
+    <div className={styles.calendarContainer}>
       <label>
-        Sélectionnez la date :{" "}
         <input
+          className={styles.calendarInput}
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}

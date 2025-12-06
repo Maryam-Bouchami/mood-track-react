@@ -1,0 +1,12 @@
+.calendarInput {
+  width: 500px;
+  height: 70px;
+  border: 2px solid #932fc2;
+  border-radius: 10px;
+  font-size: 1.3em;
+  color: rgb(94, 2, 94);
+}
+
+.calendarContainer {
+  display: flex;
+}

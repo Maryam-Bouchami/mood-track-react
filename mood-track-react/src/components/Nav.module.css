@@ -1,5 +1,8 @@
 .navContainer {
-  height: 100px;
-  width: 800px;
+  height: 90px;
+  width: 100%;
   display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
