@@ -5,6 +5,8 @@ import Nav from "./components/Nav";
 import Calendar from "./components/Calendar";
 import SaveMood from "./components/SaveMood";
 import "./App.css";
+import MoodChart from "./components/MoodChart";
+import MoodDonut from "./components/MoodDonut";
 
 function App() {
   // Mood actuel
@@ -53,6 +55,23 @@ function App() {
     setHistory([]);
   };
 
+  // Convertir history => tableau pour le Donut
+  const donutData = history.reduce((acc, mood) => {
+    const existing = acc.find((m) => m.name === mood.name);
+
+    if (existing) {
+      existing.value += 1;
+    } else {
+      acc.push({
+        name: mood.name,
+        value: 1,
+        color: mood.color, // tu récupères la couleur du mood
+      });
+    }
+
+    return acc;
+  }, []);
+
   return (
     <MyTheme.Provider value={moodState.color}>
       <Nav />
@@ -69,14 +88,17 @@ function App() {
         <div className="history">
           <h3>History</h3>
           <ul>
-            {history.map((m, i) => (
+            {/*      historique des moods 
+        
+            history.map((m, i) => (
               <li key={i}>
-                {m.date} — {m.name}
-                {/*  — {m.color} — Score {m.score}  */}
+                {m.date} — {m.name}— {m.color} — Score {m.score}
               </li>
-            ))}
+            )) */}
           </ul>
 
+          <MoodChart data={history} />
+          <MoodDonut data={donutData} />
           <button className="emptyButton" onClick={clearStorage}>
             Clear History
           </button>
