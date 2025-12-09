@@ -20,7 +20,7 @@ export default function MoodDonut({ data }) {
         cy="50%"
         innerRadius={40} // <--- Donut
         outerRadius={110}
-        paddingAngle={8}
+        paddingAngle={2}
       >
         {data.map((entry, index) => (
           <Cell key={index} fill={entry.color} />

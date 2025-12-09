@@ -78,15 +78,20 @@ function App() {
 
       <div className="AppContainer">
         {/*  Nouveau composant SaveMood */}
+
         <SaveMood
           moodState={moodState}
           setMoodState={setMoodState}
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}
           onSave={saveMood}
-        />
+        >
+          <button className="emptyButton" onClick={clearStorage}>
+            Clear History
+          </button>
+        </SaveMood>
+
         <div className="history">
-          <h3>History</h3>
           <ul>
             {/*      historique des moods 
         
@@ -99,9 +104,6 @@ function App() {
 
           <MoodChart data={history} />
           <MoodDonut data={donutData} />
-          <button className="emptyButton" onClick={clearStorage}>
-            Clear History
-          </button>
         </div>
       </div>
     </MyTheme.Provider>

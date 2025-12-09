@@ -1,10 +1,9 @@
 .calendarInput {
   width: 500px;
-  height: 70px;
-  border: 2px solid #932fc2;
+  height: 50px;
+  border: 2px solid #12be99;
   border-radius: 10px;
   font-size: 1.3em;
-  color: rgb(94, 2, 94);
 }
 
 .calendarContainer {

@@ -8,6 +8,7 @@ function SaveMood({
   selectedDate,
   setSelectedDate,
   onSave,
+  children,
 }) {
   return (
     <div className={styles.saveMoodContainer}>
@@ -16,8 +17,9 @@ function SaveMood({
       {/* Mood Selector */}
       <MoodsList moodState={moodState} setMoodState={setMoodState} />
       <button className={styles.saveButton} onClick={onSave}>
-        💾 Save The Mood
+        Save The Mood
       </button>
+      {children}
     </div>
   );
 }

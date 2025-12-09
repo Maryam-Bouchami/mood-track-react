@@ -1,12 +1,10 @@
 [
-  { "name": "Happy", "color": "#FFD93D", "score": 5 },
-  { "name": "Excited", "color": "#FF8E3C", "score": 4 },
-  { "name": "Calm", "color": "#6BCB77", "score": 3 },
-  { "name": "Neutral", "color": "#C7C9C7", "score": 2 },
-  { "name": "Sad", "color": "#4D96FF", "score": 1 },
-  { "name": "Angry", "color": "#FF6B6B", "score": 1 },
-  { "name": "Stressed", "color": "#9D4EDD", "score": 1 },
-  { "name": "Tired", "color": "#6E6E6E", "score": 1 },
-  { "name": "Motivated", "color": "#00BFA6", "score": 4 },
-  { "name": "Grateful", "color": "#F9A826", "score": 5 }
+  { "name": "Happy", "color": "rgb(255, 217, 61)", "score": 5 },
+  { "name": "Excited", "color": "rgb(255, 142, 60)", "score": 4 },
+  { "name": "Calm", "color": "rgb(107, 203, 119)", "score": 3 },
+  { "name": "Sad", "color": "rgb(77, 150, 255)", "score": 1 },
+  { "name": "Angry", "color": "rgb(255, 107, 107)", "score": 1 },
+  { "name": "Stressed", "color": "rgb(157, 78, 221)", "score": 1 },
+  { "name": "Tired", "color": "rgb(110, 110, 110)", "score": 1 },
+  { "name": "Grateful", "color": "rgb(249, 168, 38)", "score": 5 }
 ]

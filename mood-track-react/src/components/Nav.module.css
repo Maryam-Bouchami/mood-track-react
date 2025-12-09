@@ -1,8 +1,12 @@
 .navContainer {
-  height: 90px;
+  height: 80px;
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 0px;
-  margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  color: aliceblue;
 }

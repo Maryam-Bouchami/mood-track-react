@@ -17,7 +17,7 @@ import {
 
 export default function MoodChart({ data }) {
   return (
-    <LineChart width={500} height={300} data={data}>
+    <LineChart width={500} height={250} data={data}>
       <XAxis dataKey="date" />
       <YAxis />
       <CartesianGrid stroke="#ccc" />
