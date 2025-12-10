@@ -1,4 +1,4 @@
-import styles from "./Mood.module.css";
+import styles from "../styles/Mood.module.css";
 
 export default function Mood({ name, color, score, moodState, setMoodState }) {
   function handleClick() {

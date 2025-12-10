@@ -1,7 +1,7 @@
 // SaveMood.jsx
 import MoodsList from "./MoodsList";
 import Calendar from "./Calendar";
-import styles from "./SaveMood.module.css";
+import styles from "../styles/SaveMood.module.css";
 function SaveMood({
   moodState,
   setMoodState,

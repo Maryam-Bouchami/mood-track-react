@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import MyTheme from "../MyTheme";
-import styles from "./Nav.module.css";
+import styles from "../styles/Nav.module.css";
 export default function Nav() {
   const backgColor = useContext(MyTheme);
   return (

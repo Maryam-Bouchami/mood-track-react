@@ -1,6 +1,6 @@
 import moods from "../data/moods.json";
 import Mood from "./Mood";
-import styles from "./MoodsList.module.css";
+import styles from "../styles/MoodsList.module.css";
 export default function MoodsList({ moodState, setMoodState }) {
   return (
     <div className={styles.moodsContainer}>
