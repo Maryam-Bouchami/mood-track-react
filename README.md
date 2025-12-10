@@ -16,30 +16,48 @@ Highlighted active mood button
 
 -----------------------------------------------------------------------------------------------------------------------------------
 Installation:
-$ git clone https://github.com/Maryam-Bouchami/mood-track-react.git
+git clone https://github.com/Maryam-Bouchami/mood-track-react.git
+
 cd mood-track-react
+
 npm install
+
 npm run dev
+
 ------------------------------------------------------------------------------------------------------------------------------------
 
 Tech Stack:
+
 React
+
 JavaScript
+
 CSS Modules
+
 LocalStorage
+
 Recharts
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 Project Structure:
 
 src/
+
   components/     
+  
   data/
+  
   styles/
+  
   App.jsx
+  
   main.jsx
+  
   MyTheme.jsx
+  
 
 ----------------------------------------------------------------------------------------------------------------------------------------
+
 Purpose:
 
 This project was built to showcase my front-end skills to recruiters:
