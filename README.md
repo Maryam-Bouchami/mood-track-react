@@ -16,11 +16,10 @@ Highlighted active mood button
 
 -----------------------------------------------------------------------------------------------------------------------------------
 Installation:
-git clone https://github.com/your-username/mood-track.git
-cd mood-track
+$ git clone https://github.com/Maryam-Bouchami/mood-track-react.git
+cd mood-track-react
 npm install
 npm run dev
-
 ------------------------------------------------------------------------------------------------------------------------------------
 
 Tech Stack:
