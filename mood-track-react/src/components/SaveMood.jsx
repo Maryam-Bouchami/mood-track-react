@@ -17,7 +17,7 @@ function SaveMood({
       {/* Mood Selector */}
       <MoodsList moodState={moodState} setMoodState={setMoodState} />
       <button className={styles.saveButton} onClick={onSave}>
-        Save The Mood
+        Save Mood
       </button>
       {children}
     </div>

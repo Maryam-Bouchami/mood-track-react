@@ -3,12 +3,13 @@
   width: 180px;
   border: none;
   border-radius: 30px;
-  background: linear-gradient(to right, #12be99, #02886b);
+  background: linear-gradient(to right, #82d66d, #24b101);
+  font-size: 1.1em;
   color: aliceblue;
 }
 
 .saveButton:hover {
-  background: linear-gradient(to right, #02886b, #12be99);
+  background: linear-gradient(to right, #24b101, #82d66d);
 }
 
 .saveMoodContainer {
@@ -19,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid #02886b;
+  border: 2px solid #8ee2d0;
   border-radius: 20px;
   padding: 10px;
 }

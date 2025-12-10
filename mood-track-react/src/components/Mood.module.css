@@ -3,11 +3,9 @@
   width: 80px;
   border: none;
   border-radius: 40px;
-  box-shadow: 5px 5px rgba(120, 124, 124, 0.5);
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
   font-size: 1em;
   font-weight: 500;
+  color: #fff;
 }
 
 .moodButton:hover {

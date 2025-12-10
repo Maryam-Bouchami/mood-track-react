@@ -16,12 +16,13 @@ body {
   width: 180px;
   border: none;
   border-radius: 30px;
-  background: linear-gradient(to right, #830101, #eb6060);
+  background: linear-gradient(to right, #ce2525, #eb6060);
   color: aliceblue;
+  font-size: 1.1em;
 }
 
 .emptyButton:hover {
-  background: linear-gradient(to right, #eb6060, #830101);
+  background: linear-gradient(to right, #eb6060, #ce2525);
 }
 
 .AppContainer {

@@ -9,7 +9,7 @@ export default function Nav() {
       className={styles.navContainer}
     >
       <img src="./mood-logo.png" />
-      <h1>My Mood Journal</h1>
+      <h1>Mood Track</h1>
     </div>
   );
 }
