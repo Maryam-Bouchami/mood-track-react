@@ -58,12 +58,6 @@ src/
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-Purpose:
-
-This project was built to showcase my front-end skills to recruiters:
-clean UI, component architecture, state management, data visualization, and user interaction.
-
-----------------------------------------------------------------------------------------------------------------------------------------
 
 License:
 
