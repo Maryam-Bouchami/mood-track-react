@@ -4,7 +4,7 @@ import MyTheme from "./MyTheme";
 import Nav from "./components/Nav";
 import Calendar from "./components/Calendar";
 import SaveMood from "./components/SaveMood";
-import "./App.css";
+import "./styles/App.css";
 import MoodChart from "./components/MoodChart";
 import MoodDonut from "./components/MoodDonut";
 
