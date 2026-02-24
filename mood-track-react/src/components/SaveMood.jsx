@@ -11,15 +11,19 @@ function SaveMood({
   children,
 }) {
   return (
-    <div className={styles.saveMoodContainer}>
-      {/* Calendar */}
-      <Calendar selectedDate={selectedDate} onDateChange={setSelectedDate} />
-      {/* Mood Selector */}
-      <MoodsList moodState={moodState} setMoodState={setMoodState} />
-      <button className={styles.saveButton} onClick={onSave}>
-        Save Mood
-      </button>
-      {children}
+    // SaveMood.jsx – version avec disposition côte-à-côte sur desktop
+    <div className={`${styles.saveMoodContainer} ${styles.container}`}>
+      <div className={styles.calendarSection}>
+        <Calendar selectedDate={selectedDate} onDateChange={setSelectedDate} />
+      </div>
+
+      <div className={styles.moodsSection}>
+        <MoodsList moodState={moodState} setMoodState={setMoodState} />
+        <button className={styles.saveButton} onClick={onSave}>
+          Save Mood
+        </button>
+        {children}
+      </div>
     </div>
   );
 }

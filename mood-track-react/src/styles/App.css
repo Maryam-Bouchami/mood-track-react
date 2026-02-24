@@ -1,33 +1,103 @@
+/* Reset & base */
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #f9f9f9;
+  min-height: 100vh;
 }
+
+/* Conteneur principal */
+.AppContainer {
+  margin-top: 90px;
+  padding: 20px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* deux colonnes égales par défaut (desktop) */
+  gap: 32px; /* espace entre les deux colonnes */
+  align-items: start; /* aligner le haut des colonnes */
+}
+
+/* Section SaveMood (gauche sur desktop) */
+.SaveMood-wrapper {
+  /* ← on va envelopper SaveMood si besoin */
+  width: 100%;
+}
+
+/* Section historique + graphiques (droite sur desktop) */
 .history {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  gap: 32px; /* espace entre chart & donut */
 }
 
+/* Limiter la taille des graphiques pour qu'ils restent lisibles */
+.history > * {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Bouton Clear History */
 .emptyButton {
-  height: 40px;
-  width: 180px;
+  height: 44px;
+  min-width: 200px;
+  padding: 0 24px;
   border: none;
   border-radius: 30px;
   background: linear-gradient(to right, #ce2525, #eb6060);
-  color: aliceblue;
-  font-size: 1.1em;
+  color: white;
+  font-size: 1.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .emptyButton:hover {
   background: linear-gradient(to right, #eb6060, #ce2525);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(206, 37, 37, 0.25);
 }
 
-.AppContainer {
-  margin-top: 90px;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 20px;
+/* ────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+
+/* Tablette + mobile (< 1024px) → on repasse en une seule colonne */
+@media (max-width: 1023px) {
+  .AppContainer {
+    grid-template-columns: 1fr; /* une seule colonne */
+    gap: 40px;
+    padding: 16px;
+  }
+
+  .history {
+    gap: 40px;
+  }
+
+  .history > * {
+    max-width: 100%;
+  }
+}
+.SaveMood-wrapper {
+  width: 100%;
+}
+/* Petits écrans / mobile (< 640px) */
+@media (max-width: 639px) {
+  .AppContainer {
+    margin-top: 70px; /* moins de marge si nav est fixe */
+    padding: 12px;
+    gap: 32px;
+  }
+
+  .emptyButton {
+    min-width: 200px;
+    width: 100%;
+    max-width: 240px;
+    height: 48px; /* meilleur touch target */
+    font-size: 1rem;
+  }
 }

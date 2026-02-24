@@ -77,31 +77,23 @@ function App() {
       <Nav />
 
       <div className="AppContainer">
-        {/*  Nouveau composant SaveMood */}
-
-        <SaveMood
-          moodState={moodState}
-          setMoodState={setMoodState}
-          selectedDate={selectedDate}
-          setSelectedDate={setSelectedDate}
-          onSave={saveMood}
-        >
-          <button className="emptyButton" onClick={clearStorage}>
-            Clear History
-          </button>
-        </SaveMood>
+        <div className="SaveMood-wrapper">
+          {" "}
+          {/* ← ajout recommandé */}
+          <SaveMood
+            moodState={moodState}
+            setMoodState={setMoodState}
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+            onSave={saveMood}
+          >
+            <button className="emptyButton" onClick={clearStorage}>
+              Clear History
+            </button>
+          </SaveMood>
+        </div>
 
         <div className="history">
-          <ul>
-            {/*      historique des moods 
-        
-            history.map((m, i) => (
-              <li key={i}>
-                {m.date} — {m.name}— {m.color} — Score {m.score}
-              </li>
-            )) */}
-          </ul>
-
           <MoodChart data={history} />
           <MoodDonut data={donutData} />
         </div>

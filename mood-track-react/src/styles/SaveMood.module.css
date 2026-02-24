@@ -1,26 +1,101 @@
-.saveButton {
-  height: 40px;
-  width: 180px;
-  border: none;
-  border-radius: 30px;
-  background: linear-gradient(to right, #82d66d, #24b101);
-  font-size: 1.1em;
-  color: aliceblue;
-}
-
-.saveButton:hover {
-  background: linear-gradient(to right, #24b101, #82d66d);
-}
-
 .saveMoodContainer {
-  width: 80%;
-  height: 460px;
+  /* ────────────────────────────────
+     Base (mobile first)
+  ──────────────────────────────── */
+  width: 100%;
+  max-width: 520px;
+  min-height: 420px;
+
+  margin: 0 auto;
+  padding: 20px 16px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
+
   border: 2px solid #8ee2d0;
-  border-radius: 20px;
-  padding: 10px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.4); /* léger fond → plus doux */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Bouton Save */
+.saveButton {
+  height: 48px;
+  min-width: 180px;
+  width: 100%;
+  max-width: 240px;
+
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #82d66d, #24b101);
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saveButton:hover {
+  background: linear-gradient(to right, #24b101, #82d66d);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(36, 177, 1, 0.3);
+}
+
+/* ────────────────────────────────
+   Desktop / tablette large
+───────────────────────────────── */
+@media (min-width: 768px) {
+  .saveMoodContainer {
+    max-width: 640px; /* un peu plus large sur desktop */
+    padding: 32px 40px;
+    min-height: 480px;
+    gap: 32px;
+    border-radius: 20px;
+  }
+
+  .saveButton {
+    width: 200px; /* fixe sur desktop */
+    height: 48px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Très petits écrans (ex: iPhone SE) */
+@media (max-width: 360px) {
+  .saveMoodContainer {
+    padding: 16px 12px;
+    gap: 20px;
+  }
+
+  .saveButton {
+    height: 46px;
+    font-size: 0.98rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 60px;
+    align-items: flex-start;
+  }
+
+  .calendarSection,
+  .moodsSection {
+    flex: 1;
+    min-width: 320px;
+    max-width: 420px;
+  }
+
+  .moodsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
 }
